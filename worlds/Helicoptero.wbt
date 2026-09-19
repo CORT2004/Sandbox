@@ -5,18 +5,10 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 
 WorldInfo {
-  info [
-    ""
-    ""
-    ""
-    ""
-    ""
-    ""
-  ]
 }
 Viewpoint {
-  orientation -0.17719315173974504 0.15711281548736414 0.9715545019123575 1.7193967070466922
-  position 0.15383177732605607 -0.9462170037886981 0.4963897906593221
+  orientation -0.12505000468370336 0.01831251237702387 0.9919814253397324 2.8530989197653582
+  position 1.6863805568322712 -0.6883714838922916 0.7590517324381743
 }
 TexturedBackground {
 }
@@ -25,19 +17,27 @@ TexturedBackgroundLight {
 RectangleArena {
 }
 Solid {
-  translation 0 0 0.14
+  translation 0 0 0.16
   children [
     Shape {
       appearance PBRAppearance {
-        baseColor 1 0.2 1
+        baseColor 1 0 0
       }
       geometry Box {
+        size 0.1 0.2 0.05
+      }
+    }
+    Robot {
+      boundingObject Box {
         size 0.1 0.1 0.1
+      }
+      physics Physics {
       }
     }
   ]
-  name "Cubo"
   boundingObject Box {
     size 0.1 0.1 0.1
+  }
+  physics Physics {
   }
 }

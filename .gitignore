@@ -1,0 +1,6 @@
+build/
+*.exe
+//git status
+//git add .
+//git commit -m "Descripción de lo que hice"
+//git push

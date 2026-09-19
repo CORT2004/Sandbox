@@ -1,0 +1,193 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.15313629614944285 -0.11496426150724721 0.9814950297264492 4.411661037772671
+  position 0.09343495496803497 0.35182443284825715 0.15846157995567037
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0 0.04
+  children [
+    DistanceSensor {
+      children [
+        Solid {
+          translation 0.1 0.03 0
+          rotation 0 0 1 0.476
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.6 1 1
+              }
+              geometry DEF Sensor_Dist_2 Box {
+                size 0.01 0.01 0.01
+              }
+            }
+          ]
+          boundingObject USE Sensor_Dist_2
+        }
+      ]
+      name "distance sensor(1)"
+    }
+    DistanceSensor {
+      translation 0.1 -0.03 0
+      rotation 0 0 -1 0.476401
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4 1 1
+          }
+          geometry DEF Sensor_Dist Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      boundingObject USE Sensor_Dist
+    }
+    DEF Llanta_4 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.05 0.06 0
+      }
+      device [
+        DEF Motor_4 RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.06 -0.066 0
+        rotation 1 0 0 1.5707996938995747
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(4)"
+        boundingObject Cylinder {
+          height 0.03
+          radius 0.04
+        }
+      }
+    }
+    DEF Llanta_3 HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        DEF Motor_3 RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.06 -0.066 0
+        rotation 1 0 0 1.5707996938995747
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject Cylinder {
+          height 0.03
+          radius 0.04
+        }
+      }
+    }
+    DEF Llanta_2 HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        DEF Motor_2 RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation 0.05 0.066 0
+        rotation 1 0 0 1.57079
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject Cylinder {
+          height 0.03
+          radius 0.04
+        }
+      }
+    }
+    DEF Llanta_1 HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      device [
+        DEF Motor_1 RotationalMotor {
+        }
+      ]
+      endPoint Solid {
+        translation -0.05 0.066 0
+        rotation 1 0 0 1.57079
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 0
+            }
+            geometry Cylinder {
+              height 0.03
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject Cylinder {
+          height 0.03
+          radius 0.04
+        }
+      }
+    }
+    DEF Cuerpo_Robot Solid {
+      rotation 1 0 0 1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Box {
+            size 0.2 0.05 0.1
+          }
+        }
+      ]
+    }
+  ]
+  boundingObject Box {
+    size 0.2 0.1 0.05
+  }
+  physics Physics {
+    density -1
+    mass 1
+  }
+  controller "Carrito_Controlador"
+}
